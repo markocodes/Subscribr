@@ -6,7 +6,7 @@ import {
   View,
 } from "react-native";
 
-function SubListing() {
+function SubListing({ title, desc, price, nextPayment, image }) {
   return (
     <TouchableHighlight
       underlayColor="red"
@@ -14,19 +14,16 @@ function SubListing() {
     >
       <View style={styles.container}>
         <View style={styles.logoView}>
-          <Image
-            style={styles.logo}
-            source={require("../assets/tiny_logo.png")}
-          />
+          <Image style={styles.logo} source={image} />
           <View>
-            <Text style={styles.name}>Netflix</Text>
-            <Text>This is a netflix sub</Text>
+            <Text style={styles.name}>{title}</Text>
+            <Text>{desc}</Text>
           </View>
         </View>
         <View style={styles.price}>
           <View>
-            <Text style={styles.priceText}>$5.99</Text>
-            <Text>Today</Text>
+            <Text style={styles.priceText}>{price}</Text>
+            <Text>{nextPayment}</Text>
           </View>
         </View>
       </View>
